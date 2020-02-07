@@ -2,6 +2,11 @@
 version: '3.7'
 services: 
   squashtmle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args: 
+        - SQUASH_VERSION=${SQUASH_VERSION}
     image: squash-tm-le
     ports:
       - 8081:8080/tcp
